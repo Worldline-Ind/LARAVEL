@@ -1,4 +1,4 @@
-<div id="ingenico_embeded_popup"></div>
+<div id="worldline_embeded_popup"></div>
 
 <script type="text/javascript"  src="https://www.paynimo.com/paynimocheckout/client/lib/jquery.min.js" ></script>
 <script type="text/javascript" src="https://www.paynimo.com/Paynimocheckout/server/lib/checkout.js"></script>
@@ -29,7 +29,7 @@
                     'returnUrl': '/checkout',
                     'responseHandler': handleResponse,
                     'paymentMode': '{{  $mer_array['paymentMode'] }}',
-                    'checkoutElement': '{{ ($mer_array['embedPaymentGatewayOnPage'] == 1) ? '#ingenico_embeded_popup' : '' }}',
+                    'checkoutElement': '{{ ($mer_array['embedPaymentGatewayOnPage'] == 1) ? '#worldline_embeded_popup' : '' }}',
                     'merchantLogoUrl': '{{ $mer_array['logoURL'] }}', //provided merchant logo will be displayed
                     'merchantId': '{{$payval['marchantId']}}',//{{$mer_array['merchantCode']}}
                     'currency': '{{$payval['currencycode']}}',

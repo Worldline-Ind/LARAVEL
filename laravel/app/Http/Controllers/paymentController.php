@@ -11,7 +11,7 @@ class paymentController extends Controller
 {
     public function index()
     {
-       $path = storage_path() . "/json/ingenico_AdminData.json";
+       $path = storage_path() . "/json/worldline_AdminData.json";
        $mer_array = json_decode(file_get_contents($path), true);
 
        return view('paymentpage',compact('mer_array'));
@@ -19,7 +19,7 @@ class paymentController extends Controller
 
     public function payProcess(Request $request)
     {
-       $path = storage_path() . "/json/ingenico_AdminData.json";
+       $path = storage_path() . "/json/worldline_AdminData.json";
        $mer_array = json_decode(file_get_contents($path), true);
         
        if($mer_array['typeOfPayment'] == "TEST")
@@ -85,7 +85,7 @@ class paymentController extends Controller
         $response = $request->msg;
         $res_msg = explode("|",$_POST['msg']);
       
-        $path = storage_path() . "/json/ingenico_AdminData.json";
+        $path = storage_path() . "/json/worldline_AdminData.json";
         $mer_array = json_decode(file_get_contents($path), true); 
         date_default_timezone_set('Asia/Calcutta');
          $strCurDate = date('d-m-Y');
@@ -149,7 +149,7 @@ class paymentController extends Controller
          $date = $_POST['transactionDate'];
          $newDate = date("d-m-Y", strtotime($date));
       
-         $path = storage_path() . "/json/ingenico_AdminData.json";
+         $path = storage_path() . "/json/worldline_AdminData.json";
          $mer_array = json_decode(file_get_contents($path), true); 
       
          $arr_req = array(
@@ -218,7 +218,7 @@ class paymentController extends Controller
                $dates[] = $date->format('d-m-Y');
            }
          
-           $path = storage_path() . "/json/ingenico_AdminData.json";
+           $path = storage_path() . "/json/worldline_AdminData.json";
            $mer_array = json_decode(file_get_contents($path), true); 
          
              function callAPI($method, $url, $finalJsonReq)
@@ -299,7 +299,7 @@ class paymentController extends Controller
             $date = $_POST['transactionDate'];
             $newDate = date("d-m-Y", strtotime($date));
 
-            $path = storage_path() . "/json/ingenico_AdminData.json";
+            $path = storage_path() . "/json/worldline_AdminData.json";
             $mer_array = json_decode(file_get_contents($path), true); 
 
             $arr_req = array(
@@ -365,7 +365,7 @@ class paymentController extends Controller
             $date                      = $_POST['transactionDate'];
             $newDate                   = date("d-m-Y", strtotime($date));
 
-            $path = storage_path() . "/json/ingenico_AdminData.json";
+            $path = storage_path() . "/json/worldline_AdminData.json";
             $mer_array = json_decode(file_get_contents($path), true); 
             
             $arr_req = array(
@@ -429,7 +429,7 @@ class paymentController extends Controller
             $transactionIdentifier = str_shuffle("0123456789");
             $date = date("dmY", strtotime($_POST['transactionDate']));  
 
-            $path = storage_path() . "/json/ingenico_AdminData.json";
+            $path = storage_path() . "/json/worldline_AdminData.json";
             $mer_array = json_decode(file_get_contents($path), true);
 
             $arr_req = array(
@@ -504,7 +504,7 @@ class paymentController extends Controller
             $date                      = $_POST['transactionDate'];
             $newDate                   = date("d-m-Y", strtotime($date)); 
 
-            $path = storage_path() . "/json/ingenico_AdminData.json";
+            $path = storage_path() . "/json/worldline_AdminData.json";
             $mer_array = json_decode(file_get_contents($path), true);
             $arr_req = array(
                "merchant" => [
@@ -568,7 +568,7 @@ class paymentController extends Controller
             $mandateRegistrationID     = $_POST['mandateRegistrationID'];
             $transactionIdentifier     = rand(1,100000000);
 
-            $path = storage_path() . "/json/ingenico_AdminData.json";
+            $path = storage_path() . "/json/worldline_AdminData.json";
             $mer_array = json_decode(file_get_contents($path), true);
 
             $arr_req = array(
@@ -738,7 +738,7 @@ class paymentController extends Controller
          {
             $transactionIdentifier = str_shuffle("0123456789");
 
-            $path = storage_path() . "/json/ingenico_AdminData.json";
+            $path = storage_path() . "/json/worldline_AdminData.json";
             $mer_array = json_decode(file_get_contents($path), true);
 
             $arr_req = array(
@@ -946,7 +946,7 @@ class paymentController extends Controller
             );
          
             $newData = json_encode($data);
-            $path = storage_path() . "/json/ingenico_AdminData.json";
+            $path = storage_path() . "/json/worldline_AdminData.json";
              
             if(file_exists($path))
             {  
@@ -972,7 +972,7 @@ class paymentController extends Controller
          }
 
             public function s2s(){
-               $path = storage_path() . "/json/ingenico_AdminData.json";
+               $path = storage_path() . "/json/worldline_AdminData.json";
                if(isset($_GET['msg'])){
                    $msg = trim($_GET['msg']);
                    $msg_arr = explode("|", $msg);

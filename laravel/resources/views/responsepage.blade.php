@@ -110,7 +110,7 @@
                       <td><?php echo $dualVerifyData['merchantTransactionIdentifier']; ?></td>
                     </tr>
                     <tr>
-                      <td>Ingenico Identifier(Token)</td>
+                      <td>worldline Identifier(Token)</td>
                       <td><?php echo $dualVerifyData['paymentMethod']['paymentTransaction']['identifier']; ?></td>
                     </tr>
                     <tr>

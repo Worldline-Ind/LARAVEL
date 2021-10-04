@@ -10,12 +10,12 @@
 <?php
      date_default_timezone_set('Asia/Calcutta');
      $strCurDate = date('d-m-Y');
-     $path = storage_path() . "/json/ingenico_AdminData.json";
+     $path = storage_path() . "/json/worldline_AdminData.json";
      $mer_array = json_decode(file_get_contents($path), true); 
 ?>
 <html>
 <head>
-    <title>Ingenico Admin</title>
+    <title>Worldline Admin</title>
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
 </head>
@@ -23,13 +23,14 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2>Ingenico Admin Details</h2>
+                <img src="{{asset('image/worldline.png')}}" alt="worldline" style="width:400px;">
+                <h2>Worldline Admin Details</h2>
                 <form method="POST" id="myform" action="submit_request">
                     @csrf
                     <table class="table table-bordered table-hover">
                         <tr class="info">
                             <th width="30%">Description</th>
-                            <th width="70%">Ingenico ePayments (a Worldline brand) is India's leading digital payment solutions company. Being a company with more than 45 years of global payment experience, we are present in India for over 20 years and are powering over 550,000 businesses with our tailored payment solution.</th>
+                            <th width="70%">Worldline ePayments is India's leading digital payment solutions company. Being a company with more than 45 years of global payment experience, we are present in India for over 20 years and are powering over 550,000 businesses with our tailored payment solution.</th>
                         </tr>         
                          <tr>
                             <td><label>Merchant Code <span style="color:red;">*</span></label></td>
@@ -142,7 +143,7 @@
                                     <option value="NEFTRTGS" <?php if(isset($mer_array['paymentMode']) && $mer_array['paymentMode'] == "NEFTRTGS"){ echo 'selected="selected"'; } ?>>NEFTRTGS</option>
                                     <option value="emiBanks" <?php if(isset($mer_array['paymentMode']) && $mer_array['paymentMode'] == "emiBanks"){ echo 'selected="selected"'; } ?>>emiBanks</option>
                                 </select><br>
-                            <p>If Bank selection is at Ingenico ePayments India Pvt. Ltd. (a Worldline brand) end then select all, if bank selection at Merchant end then pass appropriate mode respective to selected option</p>
+                            <p>If Bank selection is at worldline ePayments India Pvt. Ltd. (a Worldline brand) end then select all, if bank selection at Merchant end then pass appropriate mode respective to selected option</p>
                             </td>
                         </tr>
                         <tr>
